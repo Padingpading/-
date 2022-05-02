@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <style type="text/css">
+  </style>
+ </head>
+
+ <body>
+    <ul  id="id">
+	     <li>1111</li> 
+	     <li>222</li>
+		 <li>333</li>
+		 <li>444</li>
+	
+	</ul>
+	<input type="button" vlaue="add" onclick="add1()"/>
+    <script type="text/javascript">
+        //在末尾添加节点
+		function add1(){
+			//获取ul的标签
+		   var ul1=document.getElementById("id");
+		   //创建标签
+		   var li1 =document.createElement("li") ;
+		   //创建文本
+		   var tex1 = document.createTextNode("555");
+		   //把文本添加道li下面
+		    li1.appendChild(tex1);
+			ul1.appendChild(li1);
+		}
+
+	</script>
+ </body>
+</html>

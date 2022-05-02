@@ -1,0 +1,587 @@
+﻿<!DOCTYPE HTML>
+<!-- saved from url=(0064)https://www.cnblogs.com/JanaChen/archive/2015/09/03/4779906.html -->
+<!DOCTYPE html PUBLIC "" ""><HTML lang="zh-cn"><HEAD><META content="IE=10.0000" 
+http-equiv="X-UA-Compatible">
+ 
+<META charset="utf-8"> 
+<META name="viewport" content="width=device-width, initial-scale=1"> 
+<TITLE>JavaWeb学习总结（一）JavaWeb入门与Tomcat - 骑着蜗牛看雪 - 博客园</TITLE> <LINK href="JavaWeb学习总结（一_files/blog-common.css" 
+rel="stylesheet" type="text/css"> <LINK id="MainCss" href="JavaWeb学习总结（一_files/bundle-summerGarden.css" 
+rel="stylesheet" type="text/css"> <LINK href="JavaWeb学习总结（一_files/243018.css" 
+rel="stylesheet" type="text/css"> <LINK id="mobile-style" href="JavaWeb学习总结（一_files/bundle-summerGarden-mobile.css" 
+rel="stylesheet" type="text/css" media="only screen and (max-width: 767px)"> 
+<LINK title="RSS" href="http://www.cnblogs.com/JanaChen/rss" rel="alternate" 
+type="application/rss+xml"> <LINK title="RSD" href="http://www.cnblogs.com/JanaChen/rsd.xml" 
+rel="EditURI" type="application/rsd+xml"> <LINK href="http://www.cnblogs.com/JanaChen/wlwmanifest.xml" 
+rel="wlwmanifest" type="application/wlwmanifest+xml"> 
+<SCRIPT src="JavaWeb学习总结（一_files/jquery-2.2.0.min.js"></SCRIPT>
+ 
+<SCRIPT type="text/javascript">var currentBlogApp = 'JanaChen', cb_enable_mathjax=false;var isLogined=false;</SCRIPT>
+ 
+<SCRIPT src="JavaWeb学习总结（一_files/blog-common.js" type="text/javascript"></SCRIPT>
+ 
+<META name="GENERATOR" content="MSHTML 11.00.10570.1001"></HEAD> 
+<BODY><A name="top"></A> <!--done--> 
+<DIV id="home">
+<DIV id="header">
+<DIV id="blogTitle"><A id="lnkBlogLogo" 
+href="http://www.cnblogs.com/JanaChen/"><IMG id="blogLogo" alt="返回主页" src="JavaWeb学习总结（一_files/logo.gif"></A>			
+		<!--done--> 
+<H1><A class="headermaintitle" id="Header1_HeaderTitle" href="http://www.cnblogs.com/JanaChen/">骑着蜗牛看雪</A></H1>
+<H2></H2></DIV><!--end: blogTitle 博客的标题和副标题 -->	 
+<DIV id="navigator">
+<UL id="navList">
+  <LI><A class="menu" id="blog_nav_sitehome" 
+  href="http://www.cnblogs.com/">博客园</A></LI>
+  <LI><A class="menu" id="blog_nav_myhome" href="http://www.cnblogs.com/JanaChen/">首页</A></LI>
+  <LI><A href="http://news.cnblogs.com/">新闻</A></LI>
+  <LI><A class="menu" id="blog_nav_newpost" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" 
+  rel="nofollow">新随笔</A></LI>
+  <LI><A class="menu" id="blog_nav_contact" accesskey="9" href="https://msg.cnblogs.com/send/%E9%AA%91%E7%9D%80%E8%9C%97%E7%89%9B%E7%9C%8B%E9%9B%AA" 
+  rel="nofollow">联系</A></LI>
+  <LI><A class="menu" id="blog_nav_admin" href="https://i.cnblogs.com/" rel="nofollow">管理</A></LI>
+  <LI><A class="menu" id="blog_nav_rss" href="http://www.cnblogs.com/JanaChen/rss">订阅</A>
+  	 <A class="aHeaderXML" id="blog_nav_rss_image" href="http://www.cnblogs.com/JanaChen/rss"><IMG 
+  alt="订阅" src="JavaWeb学习总结（一_files/xml.gif"></A></LI></UL>
+<DIV class="blogStats">
+<DIV id="blog_stats"><!--done--> 随笔- 11&nbsp; 文章- 0&nbsp; 评论- 3&nbsp; 
+</DIV></DIV><!--end: blogStats -->	 </DIV><!--end: navigator 博客导航栏 --> </DIV><!--end: header 头部 --> 
+<DIV id="main">
+<DIV id="mainContent">
+<DIV class="forFlow">
+<DIV id="post_detail"><!--done--> 
+<DIV id="topics">
+<DIV class="post">
+<H1 class="postTitle"><A class="postTitle2" id="cb_post_title_url" href="https://www.cnblogs.com/JanaChen/p/4779906.html">JavaWeb学习总结（一）JavaWeb入门与Tomcat</A>
+		 </H1>
+<DIV class="clear"></DIV>
+<DIV class="postBody">
+<DIV class="blogpost-body" id="cnblogs_post_body">
+<H2>一、常见软件系统体系结构B/S、C/S</H2>
+<H3>1. C/S</H3>
+<UL>
+  <LI>C/S结构即客户端/服务器（Client/Server），例如QQ；</LI>
+  <LI>需要编写服务器端程序，以及客户端程序，例如我们安装的就是QQ的客户端程序；</LI>
+  <LI>缺点：软件更新时需要同时更新客户端和服务器端两端，比较麻烦；</LI>
+  <LI>优点：安全性比较好。</LI></UL>
+<H3>2. B/S</H3>
+<UL>
+  <LI>B/S结构即浏览器/服务器（Browser/Server）；</LI>
+  <LI>优点：只需要编写服务器端程序；</LI>
+  <LI>缺点：安全性较差。</LI></UL>
+<P>&nbsp;</P>
+<H2>二、Web资源与Web服务器</H2>
+<H3>1. Web资源</H3>
+<UL>
+  <LI>html：静态资源；</LI>
+  <LI>JSP/Servlet&nbsp;：动态资源。</LI></UL>
+<P>当然，除了JavaWeb程序，还有其他Web程序，例如：ASP、PHP等。</P>
+<H3>2. Web服务器</H3>
+<P>Web服务器的作用是接收客户端的请求，给客户端作出响应。</P>
+<P>对于JavaWeb程序而已，还需要有JSP/Servlet容器，JSP/Servlet容器的基本功能是把动态资源转换成静态资源。</P>
+<P>我们需要使用的是Web服务器和JSP/Servlet容器，通常这两者会集于一身。下面是对JavaWeb服务器：</P>
+<UL>
+  <LI>Tomcat（Apache）：当前应用最广的JavaWeb服务器；</LI>
+  <LI>JBoss（Redhat红帽）：支持JavaEE，应用比较广；EJB容器；</LI>
+  <LI>GlassFish（Orcale）：Oracle开发JavaWeb服务器，应用不是很广；</LI>
+  <LI>Resin（Caucho）：支持JavaEE，应用越来越广；</LI>
+  <LI>Weblogic（Orcale）：要钱的！支持JavaEE，适合大型项目；</LI>
+  <LI>Websphere（IBM）：要钱的！支持JavaEE，适合大型项目；</LI></UL>
+<P>&nbsp;</P>
+<H2>三、Tomcat</H2>
+<H3>1. Tomcat概述&nbsp;</H3>
+<DIV>Tomcat服务器由Apache提供，开源免费。由于Sun和其他公司参与到了Tomcat的开发中，所以最新的JSP/Servlet规范总是能在Tomcat中体现出来。Tomcat7支持Servlet3.0，而Tomcat6只支持Servlet2.5！</DIV>
+<H3>2.&nbsp;安装、启动、配置Tomcat</H3>
+<DIV>
+<P>下载Tomcat可以到<A 
+href="http://tomcat.apache.org/">http://tomcat.apache.org/</A>下载。</P>
+<P>Tomcat分为安装版和解压版：</P>
+<UL>
+  <LI>安装版：一台电脑上只能安装一个Tomcat；</LI>
+  <LI>解压版：无需安装，解压即可用，解压多少份都可以，所以我们选择解压版。</LI></UL>
+<P>&nbsp;</P>
+<H3>3. 启动和关闭Tomcat</H3></DIV>
+<DIV>
+<P>在启动Tomcat之前，我们必须要配置环境变量：</P>
+<UL>
+  <LI>JAVA_HOME：必须先配置JAVA_HOME，因为Tomcat启动需要使用JDK；</LI>
+  <LI>CATALANA_HOME：如果是安装版，那么还需要配置这个变量，这个变量用来指定Tomcat的安装路径，例如：F:\apache-tomcat-7.0.42。</LI>
+  <LI>启动：进入%CATALANA_HOME%\bin目录，找到startup.bat&nbsp;，双击即可；</LI>
+  <LI>关闭：进入%CATALANA_HOME%\bin目录，找到shutdown.bat，双击即可；</LI></UL>
+<P>startup.bat会调用catalina.bat，而catalina.bat会调用setclasspath.bat，setclasspath.bat会使用JAVA_HOME环境变量，所以我们必须在启动Tomcat之前把JAVA_HOME配置正确。</P>
+<P>启动问题：点击startup.bat后窗口一闪即消失：检查JAVA_HOME环境变量配置是否正确；</P></DIV>
+<DIV>访问：http://localhost:8080进入Tomcat主页</DIV>
+<H3>4.&nbsp;配置端口号</H3>
+<P>打开%CATALANA_HOME%\conf\server.xml文件：</P>
+<P><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903134231263-307843598.png"></P>
+<P>http默认端口号为80，也就是说在URL中不给出端口号时就表示使用80端口。当然你也可以修改为其它端口号。</P>
+<P>当把端口号修改为80后，在浏览器中只需要输入：<A 
+href="http://localhost/">http://localhost/</A>就可以访问Tomcat主页了。</P>
+<H3>&nbsp;5.&nbsp;Tomcat的目录结构</H3>
+<DIV><IMG width="140" height="241" alt="" src="JavaWeb学习总结（一_files/806466-20150903134602575-992082692.png">&nbsp;</DIV>
+<DIV>
+<UL>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">bin</SPAN>：该目录下存放的是二进制可执行文件，如果是安装版，那么这个目录下会有两个exe文件：tomcat6.exe、tomcat6w.exe，前者是在控制台下启动Tomcat，后者是弹出UGI窗口启动Tomcat；如果是解压版，那么会有startup.bat和shutdown.bat文件，startup.bat用来启动Tomcat，但需要先配置JAVA_HOME环境变量才能启动，shutdawn.bat用来停止Tomcat；</LI>
+  <LI>
+  <P><SPAN 
+  style="color: rgb(255, 0, 0);">conf</SPAN>：这是一个非常非常重要的目录，这个目录下有四个最为重要的文件：</P>
+  <UL>
+    <LI>server.xml：配置整个服务器信息。例如修改端口号，添加虚拟主机等；下面会详细介绍这个文件；</LI>
+    <LI>tomcatusers.xml：存储tomcat用户的文件，这里保存的是tomcat的用户名及密码，以及用户的角色信息。可以按着该文件中的注释信息添加tomcat用户，然后就可以在Tomcat主页中进入Tomcat 
+    Manager页面了；</LI>
+    <LI>web.xml：部署描述符文件，这个文件中注册了很多MIME类型，即文档类型。这些MIME类型是客户端与服务器之间说明文档类型的，如用户请求一个html网页，那么服务器还会告诉客户端浏览器响应的文档是text/html类型的，这就是一个MIME类型。客户端浏览器通过这个MIME类型就知道如何处理它了。当然是在浏览器中显示这个html文件了。但如果服务器响应的是一个exe文件，那么浏览器就不可能显示它，而是应该弹出下载窗口才对。MIME就是用来说明文档的内容是什么类型的;</LI>
+    <LI>context.xml：对所有应用的统一配置，通常我们不会去配置它；</LI></UL></LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">lib</SPAN>：Tomcat的类库，里面是一大堆jar文件。如果需要添加Tomcat依赖的jar文件，可以把它放到这个目录中，当然也可以把应用依赖的jar文件放到这个目录中，这个目录中的jar所有项目都可以共享之，但这样你的应用放到其他Tomcat下时就不能再共享这个目录下的Jar包了，所以建议只把Tomcat需要的Jar包放到这个目录下；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">logs</SPAN>：这个目录中都是日志文件，记录了Tomcat启动和关闭的信息，如果启动Tomcat时有错误，那么异常也会记录在日志文件中；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">temp</SPAN>：存放Tomcat的临时文件，这个目录下的东西可以在停止Tomcat后删除；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">webapps</SPAN>：存放web项目的目录，其中每个文件夹都是一个项目；如果这个目录下已经存在了目录，那么都是tomcat自带的。项目。其中ROOT是一个特殊的项目，在地址栏中没有给出项目目录时，对应的就是ROOT项目。http://localhost:8080/examples，进入示例项目。其中examples就是项目名，即文件夹的名字；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">work</SPAN>：运行时生成的文件，最终运行的文件都在这里。通过webapps中的项目生成的！可以把这个目录下的内容删除，再次运行时会生再次生成work目录。当客户端用户访问一个JSP文件时，Tomcat会通过JSP生成Java文件，然后再编译Java文件生成class文件，生成的java和class文件都会存放到这个目录下；</LI>
+  <LI>LICENSE：许可证；</LI>
+  <LI>NOTICE：说明文件；</LI></UL>
+<P>&nbsp;</P>
+<H2>四、Web应用</H2>
+<P>静态网站：</P>
+<UL>
+  <LI>在webapps目录下创建一个目录（命名必须不包含中文和空格），这个目录称之为项目目录；</LI>
+  <LI>在项目目录下创建一个html文件；</LI></UL>
+<P>动态网站：</P></DIV>
+<UL>
+  <LI>在webapps目录下创建一个项目目录；</LI>
+  <LI>在项目目录下创建如下内容： 
+  <UL>
+    <LI>WEB-INF目录：在WEB-INF目录下创建web.xml文件（web.xml文件的内容，我们可以去其他项目中借！）</LI>
+    <LI>创建静态或动态页面；</LI></UL></LI></UL>
+<H3>1.&nbsp;创建静态应用</H3>
+<UL>
+  <LI>在webapps下创建一个hello目录；</LI>
+  <LI>在webapps\hello\下创建index.html；</LI>
+  <LI>启动tomcat；</LI>
+  <LI>打开浏览器访问http://localhost:8080/hello/index.html</LI></UL>
+<P>index.html</P>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 128, 128);">1</SPAN> <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">html</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">2</SPAN>   <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">head</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">3</SPAN>     <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">title</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>hello<SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">title</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">4</SPAN>   <SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">head</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">5</SPAN>   <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">body</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">6</SPAN>     <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">h1</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>Hello World!<SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">h1</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">7</SPAN>   <SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">body</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">8</SPAN> <SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">html</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN></PRE></DIV>
+<H3>2.&nbsp;创建动态应用</H3>
+<UL>
+  <LI>在webapps下创建hello1目录；</LI>
+  <LI>在webapps\hello1\下创建WEB-INF目录；</LI>
+  <LI>在webapps\hello1\WEB-INF\下创建web.xml；</LI>
+  <LI>在webapps\hello1\下创建index.html。</LI>
+  <LI>打开浏览器访问http://localhost:8080/hello/index.html</LI></UL>
+<P>web.xml</P>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 128, 128);">1</SPAN> <SPAN style="color: rgb(0, 0, 255);">&lt;?</SPAN><SPAN style="color: rgb(255, 0, 255);">xml version="1.0" encoding="UTF-8"</SPAN><SPAN style="color: rgb(0, 0, 255);">?&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">2</SPAN> <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">web-app </SPAN><SPAN style="color: rgb(255, 0, 0);">version</SPAN><SPAN style="color: rgb(0, 0, 255);">="2.5"</SPAN> 
+<SPAN style="color: rgb(0, 128, 128);">3</SPAN> <SPAN style="color: rgb(255, 0, 0);">    xmlns</SPAN><SPAN style="color: rgb(0, 0, 255);">="http://java.sun.com/xml/ns/javaee"</SPAN> 
+<SPAN style="color: rgb(0, 128, 128);">4</SPAN> <SPAN style="color: rgb(255, 0, 0);">    xmlns:xsi</SPAN><SPAN style="color: rgb(0, 0, 255);">="http://www.w3.org/2001/XMLSchema-instance"</SPAN> 
+<SPAN style="color: rgb(0, 128, 128);">5</SPAN> <SPAN style="color: rgb(255, 0, 0);">    xsi:schemaLocation</SPAN><SPAN style="color: rgb(0, 0, 255);">="http://java.sun.com/xml/ns/javaee 
+</SPAN><SPAN style="color: rgb(0, 128, 128);">6</SPAN> <SPAN style="color: rgb(0, 0, 255);">    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">7</SPAN> <SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">web-app</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN></PRE></DIV>
+<P>完整的Web应用还需要在WEB-INF目录下创建：</P>
+<UL>
+  <LI>classes；</LI>
+  <LI>lib目录；</LI></UL>
+<P>webapps</P>
+<P>　　|- hello</P>
+<P>　　　　|-index.html</P>
+<P>　　　　|-WEB-INF</P>
+<P>　　　　　　|-web.xml</P>
+<P>　　　　　　|-classes</P>
+<P>　　　　　　|-lib</P>
+<P>hello：应用目录，hello就是应用的名称；</P>
+<UL>
+  <LI>index.html：应用资源。应用下可以有多个资源，例如css、js、html、jsp等，也可以把资源放到文件夹中，例如：hello\html\index.html，这时访问URL为：http://localhost:8080/hello/html/index.html；</LI>
+  <LI>WEB-INF：这个目录名称必须是大写，这个目录下的东西是无法通过浏览器直接访问的，也就是说放到这里的东西是安全的；</LI>
+  <LI>web.xml：应用程序的部署描述符文件，可以在该文件中对应用进行配置，例如配置应用的首页：</LI></UL>
+<P>&nbsp;　　　　　　　　&lt;welcome-file-list&gt;</P>
+<P>&nbsp;&nbsp;　　　　　　　　&nbsp; 
+&lt;welcome-file&gt;index.html&lt;/welcome-file&gt;</P>
+<P>　　　　　　　　&nbsp;&lt;/welcome-file-list&gt;</P>
+<UL>
+  <LI>classes：存放class文件的目录；</LI>
+  <LI>lib：存放jar包的目录；</LI></UL>
+<H3>3.&nbsp;配置外部应用</H3>
+<P><SPAN 
+style="color: rgb(255, 0, 0);">原来我们的项目放到webapps下，现在我放到外面，也希望tomcat可以找到它！</SPAN></P>
+<P>也可以把应用放到Tomcat之外，这就是外部应用了。例如我们把上面写的hello应用从webapps目录中剪切到C盘下，即C:/hello。现在hello这个Web应用已经不在Tomcat中了，这时我们需要在tomcat中配置外部应用的位置，配置的方式一共有两种：</P>
+<UL>
+  <LI>conf/server.xml：打开server.xml文件，找到&lt;Host&gt;元素，在其中添加&lt;Context&gt;元素，代码如下：</LI></UL>
+<P>server.xml</P>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">Host </SPAN><SPAN style="color: rgb(255, 0, 0);">name</SPAN><SPAN style="color: rgb(0, 0, 255);">="localhost"</SPAN><SPAN style="color: rgb(255, 0, 0);"> appBase</SPAN><SPAN style="color: rgb(0, 0, 255);">="webapps"</SPAN><SPAN style="color: rgb(255, 0, 0);">
+        unpackWARs</SPAN><SPAN style="color: rgb(0, 0, 255);">="true"</SPAN><SPAN style="color: rgb(255, 0, 0);"> autoDeploy</SPAN><SPAN style="color: rgb(0, 0, 255);">="true"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+        <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">Context </SPAN><SPAN style="color: rgb(255, 0, 0);">path</SPAN><SPAN style="color: rgb(0, 0, 255);">="hello"</SPAN><SPAN style="color: rgb(255, 0, 0);"> docBase</SPAN><SPAN style="color: rgb(0, 0, 255);">="C:/hello"</SPAN><SPAN style="color: rgb(0, 0, 255);">/&gt;</SPAN>
+<SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">Host</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN></PRE></DIV>
+<P>1) path：指定当前应用的名称；</P>
+<P>2) docBase：指定应用的物理位置；</P>
+<P>3) 浏览器访问路径：<A 
+href="http://localhost:8080/itcast_hello/index.html">http://localhost:8080/itcast_hello/index.html</A>。</P>
+<UL>
+  <LI>conf/catalana/localhost：在该目录下创建hello.xml文件，在该文件中编写&lt;Context&gt;元素，代码如下：</LI></UL>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">Context </SPAN><SPAN style="color: rgb(255, 0, 0);">docBase</SPAN><SPAN style="color: rgb(0, 0, 255);">="C:/hello"</SPAN><SPAN style="color: rgb(0, 0, 255);">/&gt;</SPAN></PRE></DIV>
+<P>1)&nbsp;&nbsp;&nbsp;&nbsp; 文件名：指定当前应用的名称；</P>
+<P>2)&nbsp;&nbsp;&nbsp;&nbsp; docBase：指定应用的物理位置；</P>
+<P>3)&nbsp;&nbsp;&nbsp;&nbsp; 浏览器访问路径：<A href="http://localhost:8080/itcast_hello/index.html">http://localhost:8080/itcast_hello/index.html</A>。</P>
+<H3>4.&nbsp;理解server.xml</H3>
+<P>&lt;Server&gt;</P>
+<P>&nbsp; &lt;Servier&gt;</P>
+<P>&nbsp;&nbsp;&nbsp; &lt;Connector&gt;</P>
+<P>&nbsp;&nbsp;&nbsp; &lt;Engine&gt;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Host&gt;</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;Context&gt;</P>
+<UL>
+  <LI>&lt;Server&gt;：根元素，表示整个服务器的配置信息；</LI>
+  <LI>&lt;Service&gt;：&lt;Server&gt;的子元素，在&lt;Server&gt;中只能有一个&lt;Service&gt;元素，它表示服务；</LI>
+  <LI>&lt;Connector&gt;：&lt;Service&gt;的子元素，在&lt;Service&gt;中可以有N个&lt;Connector&gt;元素，它表示连接。</LI>
+  <LI>&lt;Engine&gt;：&lt;Service&gt;的子元素，在&lt;Service&gt;中只能有一&lt;Engine&gt;元素，该元素表示引擎，它是&lt;Service&gt;组件的核心。</LI>
+  <LI>&lt;Host&gt;：&lt;Engine&gt;的子元素，在&lt;Engine&gt;中可以有N个&lt;Host&gt;元素，每个&lt;Host&gt;元素表示一个虚拟主机。所谓虚拟主机就像是真的主机一样，每个主机都有自己的主机名和项目目录。例如&lt;Host 
+  name=”localhost” 
+  appBase=”webapps”&gt;表示主机名为localhost，这个主机的项目存放在webapps目录中。访问这个项目下的主机时，需要使用localhost主机名，项目都存放在webapps目录下。</LI>
+  <LI>&lt;Context&gt;：&lt;Host&gt;元素的子元素，在&lt;Host&gt;中可以有N个&lt;Context&gt;元素，每个&lt;Context&gt;元素表示一个应用。如果应用在&lt;Host&gt;的appBase指定的目录下，那么可以不配置&lt;Context&gt;元素，如果是外部应用，那么就必须配置&lt;Context&gt;。如果要为应用指定资源，也需要配置&lt;Context&gt;元素。</LI></UL>
+<P>&nbsp;</P>
+<P>我们可以把&lt;Server&gt;看作是一个大酒店：</P>
+<UL>
+  <LI>&lt;Service&gt;：酒店的服务部门；</LI>
+  <LI>&lt;Connector&gt;：服务员；</LI>
+  <LI>&lt;Engine&gt;：后厨；</LI>
+  <LI>&lt;Host&gt;：后厨中的一个区，例如川菜区是一个&lt;Host&gt;、粤菜区是一个&lt;Host&gt;；</LI>
+  <LI>&lt;Context&gt;：后厨的一个厨师。</LI></UL>
+<DIV>
+<P>用户发出一个请求：http://localhost:8080/hello/index.jsp。发现是http/1.1协议，而且还是8080端口，所以就交给了处理这一请求的“服务员（处理HTTP请求的&lt;Connector&gt;）”，“服务员”再把请求交给了“后厨（&lt;Engine&gt;）”，因为请求是要一盘水煮鱼，所以由“川菜区（&lt;Host&gt;）”负责，因为“大老王师傅&lt;Context&gt;”做水煮鱼最地道，所以由它完成。</P>
+<UL>
+  <LI>&lt;Connector&gt;：关心请求中的http、和8080；</LI>
+  <LI>&lt; Host&gt;：关心localhost；</LI>
+  <LI>&lt;Context&gt;：关心hello</LI></UL>
+<H3>&nbsp;</H3>
+<P>我们的目标是，在浏览器中输出：http://www.baidu.com就可以访问我们的项目。</P>
+<P>完成这一目标，我们需要做三件事：</P>
+<UL>
+  <LI>修改端口号为80；</LI>
+  <LI>在本机上可以解析域名为127.0.0.1，这需要修改C:\WINDOWS\system32\drivers\etc\hosts文件，添加对http://www.baidu.com和127.0.01的绑定关系；</LI>
+  <LI>在server.xml文件中添加一个&lt;Host&gt;（主机）。</LI></UL>
+<P>1) 修改端口号为80</P>
+<P><IMG width="355" height="60" alt="" src="JavaWeb学习总结（一_files/806466-20150903142033669-694039567.png"></P>
+<P>2) 绑定http://www.baidu.com和127.0.01的绑定关系</P>
+<P>　　127.0.0.1 &nbsp; &nbsp; &nbsp; www.baidu.com</P>
+<P>3) server.xml文件中添加一个&lt;Host&gt;</P>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">Host </SPAN><SPAN style="color: rgb(255, 0, 0);">name</SPAN><SPAN style="color: rgb(0, 0, 255);">="www.baidu.com"</SPAN><SPAN style="color: rgb(255, 0, 0);"> appBase</SPAN><SPAN style="color: rgb(0, 0, 255);">="F:/Mywebapps"</SPAN><SPAN style="color: rgb(255, 0, 0);">
+        unpackWARs</SPAN><SPAN style="color: rgb(0, 0, 255);">="true"</SPAN><SPAN style="color: rgb(255, 0, 0);"> autoDeploy</SPAN><SPAN style="color: rgb(0, 0, 255);">="true"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">Host</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN></PRE></DIV>
+<P>name=”www.baidu.com”：指定虚拟主机名为www.baidu.com；</P>
+<P>appBase=”F:/Mywebapps”：指定当前虚拟主机的应用程序存放目录为F:/Mywebapps。</P>
+<P>在Mywebapps目录下创建名为ROOT的应用，因为一个主机只可以有一个名为ROOT的应用，名为ROOT的应用在浏览器中访问是可以不给出应用名称。</P>
+<P><SPAN 
+style="color: rgb(255, 0, 0);">请注意，只有本机可以通过http://www.baidu.com来访问，而其他电脑不可以！</SPAN></P></DIV>
+<DIV>&nbsp;</DIV>
+<H2>五、MyEclipse创建JavaWeb应用</H2>
+<H3>&nbsp;1.&nbsp;配置Tomcat</H3>
+<DIV>
+<P>使用MyEclipse配置服务器后，就可以使用MyEclipse来启动和停止服务器了。当然，你需要先安装好服务器（Tomcat），才能配置。</P>
+<P>MyEclipse自带了一个Tomcat，<SPAN 
+style="color: rgb(255, 0, 0);">强烈建议不要使用它</SPAN>。所以，我们需要先把MyEclipse自带的Tomcat关闭，然后再来配置我们自己的Tomcat。</P>
+<UL>
+  <LI>关闭MyEclipse自带Tomcat。</LI></UL>
+<P>在工具栏中找到<IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143058044-380136488.png">，点击下箭头，点击Configure 
+Server Connector</P>
+<P><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903143123278-597164253.png"></P>
+<P>弹出对话框</P>
+<P><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903143208325-246530349.png"></P></DIV>
+<DIV>
+<UL>
+  <LI>配置我们自己的Tomcat</LI></UL>&nbsp;<IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143256356-1571630367.png"></DIV>
+<DIV><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903143313872-39934228.png"></DIV>
+<DIV>&nbsp;
+<P>使用MyEclipse启动Tomcat</P>
+<P><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903143349778-632566168.png"></P>
+<H3>2.&nbsp;创建JavaWeb应用</H3></DIV>
+<DIV>&nbsp;<IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143446169-604728225.png"></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143516278-1900380616.png"></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143549903-832273940.png"></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143612325-792228309.png"></DIV>
+<H3>3.&nbsp;启动Tomcat</H3>
+<DIV><IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143626685-1039925065.png"></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143708388-392339168.png"></DIV>
+<DIV>
+<P>上面两种方式都可以启动tomcat</P>
+<H3>4.&nbsp;关闭tomcat</H3></DIV>
+<DIV>与启动Tomcat相同位置下方就是Stop Server，即可关闭tomcat了。</DIV>
+<H3>5. 发布项目到tomcat的webapps目录</H3>
+<P><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903143806935-1616120915.png"></P>
+<P>&nbsp;</P>
+<P><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903143823935-670583851.png">&nbsp;</P>
+<P>项目发布后，就是把项目的WebRoot目录copy到Tomcat的webapps目录，并把WebRoot重命名为项目名称，即hello。所以在Tomcat的webapps下会多出一个文件夹hello。</P>
+<H3>6.&nbsp;打war包</H3>
+<P>JavaSE程序可以打包成Jar包，而JavaWeb程序可以打包成war包。然后把war发布到Tomcat的webapps目录下，Tomcat会在启动时自动解压war包。</P>
+<P><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903143916481-2117496340.png"></P>
+<P><IMG alt="" 
+src="JavaWeb学习总结（一_files/806466-20150903143928966-524224206.png"></P>
+<DIV>&nbsp;<IMG alt="" src="JavaWeb学习总结（一_files/806466-20150903143952263-659507320.png"></DIV>
+<DIV>&nbsp;</DIV>
+<H2>六、HTTP协议</H2>
+<P>协议：协议的甲乙双方，就是客户端（浏览器）和服务器！<BR>　　理解成双方通信的格式！</P>
+<UL>
+  <LI>请求协议；</LI>
+  <LI>响应协议；</LI></UL>
+<H3>1.&nbsp;安装HttpWatch</H3>
+<P>HttpWatch是专门为IE浏览器提供的，用来查看HTTP请求和响应内容的工具。而FireFox上需要安装FireBug软件。如果你使用的是Chrome，那么就不用自行安装什么工具了，因为它自身就有查看请求和响应内容的功能！</P>
+<P>HttpWatch和FireBug这些工具对浏览器而言不是必须的，但对我们开发者是很有帮助的，通过查看HTTP请求响应内容，可以使我们更好的学习HTTP协议。</P>
+<H3>2.&nbsp;HTTP概述</H3>
+<P>HTTP（hypertext transport protocol），即超文本传输协议。这个协议详细规定了浏览器和万维网服务器之间互相通信的规则。</P>
+<P>HTTP就是一个通信规则，通信规则规定了客户端发送给服务器的内容格式，也规定了服务器发送给客户端的内容格式。其实我们要学习的就是这个两个格式！客户端发送给服务器的格式叫“请求协议”；服务器发送给客户端的格式叫“响应协议”。</P>
+<H3>3.&nbsp;请求协议</H3>
+<P>请求协议的格式如下：</P>
+<UL>
+  <LI>请求首行；</LI>
+  <LI>请求头信息；</LI>
+  <LI>空行；</LI>
+  <LI>请求体</LI></UL>
+<P>浏览器发送给服务器的内容就这个格式的，如果不是这个格式服务器将无法解读！在HTTP协议中，请求有很多请求方法，其中最为常用的就是GET和POST。<SPAN 
+style="line-height: 1.5;">&nbsp;</SPAN></P>
+<H3><SPAN style="line-height: 1.5;">4.&nbsp;GET请求</SPAN></H3>
+<DIV>
+<P>打开IE，在访问hello项目的index.jsp之间打开HttpWatch，并点击“Record”按钮。然后访问index.jsp页面。查看请求内容如下：</P>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 0, 0);">GET /hello/index.jsp HTTP/1.1
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: zh-cn,zh;q=0.5
+Accept-Encoding: gzip, deflate
+Accept-Charset: GB2312,utf-8;q=0.7,*;q=0.7
+Connection: keep-alive
+Cookie: JSESSIONID=369766FDF6220F7803433C0B2DE36D98</SPAN></PRE></DIV>
+<UL>
+  <LI><SPAN style="color: rgb(255, 0, 0);">GET /hello/index.jsp 
+  HTTP/1.1</SPAN>：GET请求，请求服务器路径为/hello/index.jsp，协议为1.1；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">Host:localhost</SPAN>：请求的主机名为localhost；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">User-Agent: Mozilla/5.0 (Windows NT 
+  5.1; rv:5.0) Gecko/20100101 
+  Firefox/5.0</SPAN>：与浏览器和OS相关的信息。有些网站会显示用户的系统版本和浏览器版本信息，这都是通过获取User-Agent头信息而来的；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Accept: 
+  text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</SPAN>：告诉服务器，当前客户端可以接收的文档类型，其实这里包含了*/*，就表示什么都可以接收；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Accept-Language: 
+  zh-cn,zh;q=0.5</SPAN>：当前客户端支持的语言，可以在浏览器的工具à选项中找到语言相关信息；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Accept-Encoding: gzip, 
+  deflate</SPAN>：支持的压缩格式。数据在网络上传递时，可能服务器会把数据压缩后再发送；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Accept-Charset: 
+  GB2312,utf-8;q=0.7,*;q=0.7</SPAN>：客户端支持的编码；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Connection: 
+  keep-alive</SPAN>：客户端支持的链接方式，保持一段时间链接，默认为3000ms；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Cookie: 
+  JSESSIONID=369766FDF6220F7803433C0B2DE36D98</SPAN>：因为不是第一次访问这个地址，所以会在请求中把上一次服务器响应中发送过来的Cookie在请求中一并发送去过；这个Cookie的名字为JSESSIONID，然后在讲会话是讲究它！</LI></UL></DIV>
+<H3>5. POST请求</H3>
+<P>为了演示POST请求，我们需要修改index.jsp页面，即添加一个表单：</P>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 128, 128);">1</SPAN> <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">form </SPAN><SPAN style="color: rgb(255, 0, 0);">action</SPAN><SPAN style="color: rgb(0, 0, 255);">=""</SPAN><SPAN style="color: rgb(255, 0, 0);"> method</SPAN><SPAN style="color: rgb(0, 0, 255);">="post"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">2</SPAN>   关键字：<SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">input </SPAN><SPAN style="color: rgb(255, 0, 0);">type</SPAN><SPAN style="color: rgb(0, 0, 255);">="text"</SPAN><SPAN style="color: rgb(255, 0, 0);"> name</SPAN><SPAN style="color: rgb(0, 0, 255);">="keyword"</SPAN><SPAN style="color: rgb(0, 0, 255);">/&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">3</SPAN>   <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">input </SPAN><SPAN style="color: rgb(255, 0, 0);">type</SPAN><SPAN style="color: rgb(0, 0, 255);">="submit"</SPAN><SPAN style="color: rgb(255, 0, 0);"> value</SPAN><SPAN style="color: rgb(0, 0, 255);">="提交"</SPAN><SPAN style="color: rgb(0, 0, 255);">/&gt;</SPAN>
+<SPAN style="color: rgb(0, 128, 128);">4</SPAN> <SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">form</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN></PRE></DIV>
+<P>打开HttpWatch，输入hello后点击提交，查看请求内容如下：</P>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 0, 0);">POST /hello/index.jsp HTTP/1.1
+Accept: image/gif, image/jpeg, image/pjpeg, image/pjpeg, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, application/x-ms-application, application/x-ms-xbap, application/vnd.ms-xpsdocument, application/xaml+xml, */*
+Referer: http://localhost:8080/hello/index.jsp
+Accept-Language: zh-cn,en-US;q=0.5
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; InfoPath.2; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+Host: localhost:8080
+Content-Length: 13
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: JSESSIONID=E365D980343B9307023A1D271CC48E7D
+
+keyword=hello</SPAN></PRE></DIV>
+<P>POST请求是可以有体的，而GET请求不能有请求体。</P>
+<UL>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Referer: 
+  http://localhost:8080/hello/index.jsp：</SPAN>请求来自哪个页面，例如你在百度上点击链接到了这里，那么Referer:http://www.baidu.com；如果你是在浏览器的地址栏中直接输入的地址，那么就没有Referer这个请求头了；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Content-Type: 
+  application/x-www-form-urlencoded：</SPAN>表单的数据类型，说明会使用url格式编码数据；url编码的数据都是以“%”为前缀，后面跟随两位的16进制，例如“传智”这两个字使用UTF-8的url编码用为“%E4%BC%A0%E6%99%BA”；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">Content-Length:13：</SPAN>请求体的长度，这里表示13个字节。</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">keyword=hello：</SPAN>请求体内容！hello是在表单中输入的数据，keyword是表单字段的名字。</LI></UL>
+<P>&nbsp;</P>
+<P>Referer请求头是比较有用的一个请求头，它可以用来做统计工作，也可以用来做防盗链。</P>
+<P><STRONG>统计工作：</STRONG>我公司网站在百度上做了广告，但不知道在百度上做广告对我们网站的访问量是否有影响，那么可以对每个请求中的Referer进行分析，如果Referer为百度的很多，那么说明用户都是通过百度找到我们公司网站的。</P>
+<P><STRONG>防盗链</STRONG>：我公司网站上有一个下载链接，而其他网站盗链了这个地址，例如在我网站上的index.html页面中有一个链接，点击即可下载JDK7.0，但有某个人的微博中盗链了这个资源，它也有一个链接指向我们网站的JDK7.0，也就是说登录它的微博，点击链接就可以从我网站上下载JDK7.0，这导致我们网站的广告没有看，但下载的却是我网站的资源。这时可以使用Referer进行防盗链，在资源被下载之前，我们对Referer进行判断，如果请求来自本网站，那么允许下载，如果非本网站，先跳转到本网站看广告，然后再允许下载。</P>
+<H3>6.&nbsp;响应协议</H3>
+<H4>6.1 响应内容</H4>
+<P>响应协议的格式如下：</P>
+<UL>
+  <LI>响应首行；</LI>
+  <LI>响应头信息；</LI>
+  <LI>空行；</LI>
+  <LI>响应体。</LI></UL>
+<P>响应内容是由服务器发送给浏览器的内容，浏览器会根据响应内容来显示。</P>
+<DIV class="cnblogs_code">
+<PRE><SPAN style="color: rgb(0, 0, 0);">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/html;charset=UTF-8
+Content-Length: 724
+Set-Cookie: JSESSIONID=C97E2B4C55553EAB46079A4F263435A4; Path=/hello
+Date: Wed, 25 Sep 2012 04:15:03 GMT
+
+</SPAN><SPAN style="color: rgb(0, 0, 255);">&lt;!</SPAN><SPAN style="color: rgb(255, 0, 255);">DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">html</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+  <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">head</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+    <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">base </SPAN><SPAN style="color: rgb(255, 0, 0);">href</SPAN><SPAN style="color: rgb(0, 0, 255);">="http://localhost:8080/hello/"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+    
+    <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">title</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>My JSP 'index.jsp' starting page<SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">title</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+    <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">meta </SPAN><SPAN style="color: rgb(255, 0, 0);">http-equiv</SPAN><SPAN style="color: rgb(0, 0, 255);">="pragma"</SPAN><SPAN style="color: rgb(255, 0, 0);"> content</SPAN><SPAN style="color: rgb(0, 0, 255);">="no-cache"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+    <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">meta </SPAN><SPAN style="color: rgb(255, 0, 0);">http-equiv</SPAN><SPAN style="color: rgb(0, 0, 255);">="cache-control"</SPAN><SPAN style="color: rgb(255, 0, 0);"> content</SPAN><SPAN style="color: rgb(0, 0, 255);">="no-cache"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+    <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">meta </SPAN><SPAN style="color: rgb(255, 0, 0);">http-equiv</SPAN><SPAN style="color: rgb(0, 0, 255);">="expires"</SPAN><SPAN style="color: rgb(255, 0, 0);"> content</SPAN><SPAN style="color: rgb(0, 0, 255);">="0"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>    
+    <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">meta </SPAN><SPAN style="color: rgb(255, 0, 0);">http-equiv</SPAN><SPAN style="color: rgb(0, 0, 255);">="keywords"</SPAN><SPAN style="color: rgb(255, 0, 0);"> content</SPAN><SPAN style="color: rgb(0, 0, 255);">="keyword1,keyword2,keyword3"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+    <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">meta </SPAN><SPAN style="color: rgb(255, 0, 0);">http-equiv</SPAN><SPAN style="color: rgb(0, 0, 255);">="description"</SPAN><SPAN style="color: rgb(255, 0, 0);"> content</SPAN><SPAN style="color: rgb(0, 0, 255);">="This is my page"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+    <SPAN style="color: rgb(0, 128, 0);">&lt;!--</SPAN><SPAN style="color: rgb(0, 128, 0);">
+    &lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
+    </SPAN><SPAN style="color: rgb(0, 128, 0);">--&gt;</SPAN>
+  <SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">head</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+  
+  <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">body</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">form </SPAN><SPAN style="color: rgb(255, 0, 0);">action</SPAN><SPAN style="color: rgb(0, 0, 255);">=""</SPAN><SPAN style="color: rgb(255, 0, 0);"> method</SPAN><SPAN style="color: rgb(0, 0, 255);">="post"</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN><SPAN style="color: rgb(0, 0, 0);">
+  关键字：</SPAN><SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">input </SPAN><SPAN style="color: rgb(255, 0, 0);">type</SPAN><SPAN style="color: rgb(0, 0, 255);">="text"</SPAN><SPAN style="color: rgb(255, 0, 0);"> name</SPAN><SPAN style="color: rgb(0, 0, 255);">="keyword"</SPAN><SPAN style="color: rgb(0, 0, 255);">/&gt;</SPAN>
+  <SPAN style="color: rgb(0, 0, 255);">&lt;</SPAN><SPAN style="color: rgb(128, 0, 0);">input </SPAN><SPAN style="color: rgb(255, 0, 0);">type</SPAN><SPAN style="color: rgb(0, 0, 255);">="submit"</SPAN><SPAN style="color: rgb(255, 0, 0);"> value</SPAN><SPAN style="color: rgb(0, 0, 255);">="提交"</SPAN><SPAN style="color: rgb(0, 0, 255);">/&gt;</SPAN>
+<SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">form</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+  <SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">body</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN>
+<SPAN style="color: rgb(0, 0, 255);">&lt;/</SPAN><SPAN style="color: rgb(128, 0, 0);">html</SPAN><SPAN style="color: rgb(0, 0, 255);">&gt;</SPAN></PRE></DIV>
+<UL>
+  <LI><SPAN style="color: rgb(255, 0, 0);">HTTP/1.1 200 
+  OK</SPAN>：响应协议为HTTP1.1，状态码为200，表示请求成功，OK是对状态码的解释；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Server: 
+  Apache-Coyote/1.1</SPAN>：服务器的版本信息；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Content-Type: 
+  text/html;charset=UTF-8</SPAN>：响应体使用的编码为UTF-8；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Content-Length: 
+  724</SPAN>：响应体为724字节；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Set-Cookie: 
+  JSESSIONID=C97E2B4C55553EAB46079A4F263435A4; 
+  Path=/hello</SPAN>：响应给客户端的Cookie；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">Date: Wed, 25 Sep 2012 04:15:03 
+  GMT</SPAN>：响应的时间，这可能会有8小时的时区差；</LI></UL>
+<H4>6.2 响应码</H4>
+<P>响应头对浏览器来说很重要，它说明了响应的真正含义。例如200表示响应成功了，302表示重定向，这说明浏览器需要再发一个新的请求。</P>
+<UL>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">200</SPAN>：请求成功，浏览器会把响应体内容（通常是html）显示在浏览器中；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">404</SPAN>：请求的资源没有找到，说明客户端错误的请求了不存在的资源；</LI>
+  <LI><SPAN style="color: rgb(255, 0, 0);">500</SPAN>：请求资源找到了，但服务器内部出现了错误；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">302</SPAN>：重定向，当响应码为302时，表示服务器要求浏览器重新再发一个请求，服务器会发送一个响应头Location，它指定了新请求的URL地址；</LI>
+  <LI><SPAN 
+  style="color: rgb(255, 0, 0);">304</SPAN>：当用户第一次请求index.html时，服务器会添加一个名为Last-Modified响应头，这个头说明了index.html的最后修改时间，浏览器会把index.html内容，以及最后响应时间缓存下来。当用户第二次请求index.html时，在请求中包含一个名为If-Modified-Since请求头，它的值就是第一次请求时服务器通过Last-Modified响应头发送给浏览器的值，即index.html最后的修改时间，If-Modified-Since请求头就是在告诉服务器，我这里浏览器缓存的index.html最后修改时间是这个，您看看现在的index.html最后修改时间是不是这个，如果还是，那么您就不用再响应这个index.html内容了，我会把缓存的内容直接显示出来。而服务器端会获取If-Modified-Since值，与index.html的当前最后修改时间比对，如果相同，服务器会发响应码304，表示index.html与浏览器上次缓存的相同，无需再次发送，浏览器可以显示自己的缓存页面，如果比对不同，那么说明index.html已经做了修改，服务器会响应200。</LI></UL>
+<P>响应头：Last-Modified：最后的修改时间；</P>
+<P>请求头：If-Modified-Since：把上次请求的index.html的最后修改时间还给服务器；</P>
+<P>状态码：304，比较If-Modified-Since的时间与文件真实的时间一样时，服务器会响应304，而且不会有响正文，表示浏览器缓存的就是最新版本！</P>
+<H4>6.3&nbsp;其他响应头</H4>
+<P>告诉浏览器不要缓存的响应头：</P>
+<UL>
+  <LI>Expires: -1；</LI>
+  <LI>Cache-Control: no-cache；</LI>
+  <LI>Pragma: no-cache；</LI></UL>
+<P><STRONG>自动刷新</STRONG>响应头，浏览器会在3秒之后请求http://www.baidu.com：</P>
+<UL>
+  <LI>Refresh: 3;url=http://www.baidu.com</LI></UL>
+<H4>6.4 HTML中指定响应头</H4>
+<P>在HTMl页面中可以使用&lt;meta http-equiv="" 
+content=""&gt;来指定响应头，例如在index.html页面中给出&lt;meta http-equiv="Refresh" 
+content="3;url=http://www.baidu.com"&gt;，表示浏览器只会显示index.html页面3秒，然后自动跳转到http://www.baidu.com。</P></DIV>
+<DIV id="MySignature"></DIV>
+<DIV class="clear"></DIV>
+<DIV id="blog_post_info_block">
+<DIV id="BlogPostCategory"></DIV>
+<DIV id="EntryTag"></DIV>
+<DIV id="blog_post_info"></DIV>
+<DIV class="clear"></DIV>
+<DIV id="post_next_prev"></DIV></DIV></DIV>
+<DIV class="postDesc">posted @ <SPAN id="post-date">2015-09-03 17:11</SPAN> <A 
+href="http://www.cnblogs.com/JanaChen/">骑着蜗牛看雪</A> 阅读(<SPAN 
+id="post_view_count">...</SPAN>) 评论(<SPAN id="post_comment_count">...</SPAN>)  
+<A href="https://i.cnblogs.com/EditPosts.aspx?postid=4779906" 
+rel="nofollow">编辑</A> <A onclick="AddToWz(4779906);return false;" href="https://www.cnblogs.com/JanaChen/archive/2015/09/03/4779906.html#">收藏</A></DIV></DIV>
+<SCRIPT type="text/javascript">var allowComments=true,cb_blogId=243018,cb_entryId=4779906,cb_blogApp=currentBlogApp,cb_blogUserGuid='c2fa113e-ca51-e511-b908-9dcfd8948a71',cb_entryCreatedDate='2015/9/3 17:11:00';loadViewCount(cb_entryId);var cb_postType=1;</SCRIPT>
+	 </DIV><!--end: topics 文章、评论容器--> </DIV><A name="!comments"></A>
+<DIV id="blog-comments-placeholder"></DIV>
+<SCRIPT type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</SCRIPT>
+ 
+<DIV class="commentform" id="comment_form"><A name="commentform"></A> 
+<DIV id="divCommentShow"></DIV>
+<DIV id="comment_nav"><SPAN id="span_refresh_tips"></SPAN><A id="lnk_RefreshComments" 
+onclick="return RefreshCommentList();" href="javascript:void(0);" clientidmode="Static" 
+runat="server">刷新评论</A><A onclick="return RefreshPage();" href="https://www.cnblogs.com/JanaChen/archive/2015/09/03/4779906.html#">刷新页面</A><A 
+href="https://www.cnblogs.com/JanaChen/archive/2015/09/03/4779906.html#top">返回顶部</A></DIV>
+<DIV id="comment_form_container"></DIV>
+<DIV class="ad_text_commentbox" id="ad_text_under_commentbox"></DIV>
+<DIV id="ad_t2"></DIV>
+<DIV id="opt_under_post"></DIV>
+<DIV class="c_ad_block" id="cnblogs_c1"></DIV>
+<DIV id="under_post_news"></DIV>
+<DIV class="c_ad_block" id="cnblogs_c2"></DIV>
+<DIV id="under_post_kb"></DIV>
+<DIV class="c_ad_block" id="HistoryToday"></DIV>
+<SCRIPT type="text/javascript">
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</SCRIPT>
+ </DIV></DIV><!--end: forFlow -->	 </DIV><!--end: mainContent 主体内容容器-->	 
+<DIV id="sideBar">
+<DIV id="sideBarMain"><!--done--> 
+<DIV class="newsItem">
+<H3 class="catListTitle">公告</H3>
+<DIV id="blog-news"></DIV>
+<SCRIPT type="text/javascript">loadBlogNews();</SCRIPT>
+ </DIV>
+<DIV id="calendar">
+<DIV id="blog-calendar" style="display: none;"></DIV>
+<SCRIPT type="text/javascript">loadBlogDefaultCalendar();</SCRIPT>
+</DIV>
+<DIV id="leftcontentcontainer">
+<DIV id="blog-sidecolumn"></DIV>
+<SCRIPT type="text/javascript">loadBlogSideColumn();</SCRIPT>
+			 </DIV></DIV><!--end: sideBarMain -->	 </DIV><!--end: sideBar 侧边栏容器 -->	 
+<DIV class="clear"></DIV></DIV><!--end: main -->	 
+<DIV class="clear"></DIV>
+<DIV id="footer"><!--done--> Copyright ©2018 骑着蜗牛看雪	 </DIV><!--end: footer --> 
+</DIV><!--end: home 自定义的最大容器 --> <!--PageEndHtml Block Begin--> <!-- 生成博客目录的JS工具 --> 
+<SCRIPT src="JavaWeb学习总结（一_files/BlogDirectory.js"></SCRIPT>
+ <!-- 生成目录索引列表和右下角文章评价 --> 
+<SCRIPT src="JavaWeb学习总结（一_files/navCategory.js"></SCRIPT>
+ <!--PageEndHtml Block End--> </BODY></HTML>

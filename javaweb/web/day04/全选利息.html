@@ -1,0 +1,50 @@
+
+<html>
+ <head>
+ <style type="text/css">
+ </style>
+  </head>
+ <body>
+    <input type="checkbox" id="boxid" onclick="selAllNo();"/>
+	<br/>
+	<input type="checkbox" name="love"/>篮球
+	<input type="checkbox" name="love"/>排球
+	<input type="checkbox" name="love"/>足球
+	<input type="checkbox" name="love"/>羽毛球
+	<br/>
+	<input type="button" value="全选"    onclick="selAll();"/ >
+	<input type="button" value="全不选"  onclick="selNo();"/>
+	<input type="button" value="反选"    onclick="selOther();"/>
+    
+
+ </body>
+ <script type="text/javascript">
+     function selAll(){
+		 var   loves = document.getElementsByName("love");
+		 for(var i=0;i<loves.length;i++){
+		      var love1 = loves[i];
+              love1.checked=true;
+         } 
+	 }
+	 function selNo(){
+		 var   loves = document.getElementsByName("love");
+		 for(var i=0;i<loves.length;i++){
+		      var love1 = loves[i];
+              love1.checked=false;
+         } 
+	 }
+     //反选的操作
+	 function selOther(){
+		  var   loves = document.getElementsByName("love");
+	       for(var i=0;i<loves.length;i++){
+			   var love1 = loves[i];
+			   if(love1.checked == true){
+			      love1.checked = false;
+			   }else{
+			       love1.checked = true;
+			   }
+		   
+		   }
+     }
+	</script>
+</html>

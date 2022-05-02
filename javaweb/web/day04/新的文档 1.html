@@ -1,0 +1,23 @@
+
+<html>
+ <head>
+ <style type="text/css">
+ </style>
+  </head>
+ <body>
+     <div id="time">
+	 
+	 
+	 </div>
+    <script type="text/javascript">
+	function getD1(){
+		var date = new Date();
+		var d1 = date.toLocaleString();
+		var div1 = document.getElementById("time");
+		div1.innerHTML = d1;
+	}
+    setInterval("getD1();",1000);
+	</script>
+
+ </body>
+</html>

@@ -1,0 +1,10 @@
+dubbo:
+  application:
+    name: gmall-user
+  registry:
+    protocol: zookeeper
+    address: 192.168.10.136:2181
+  protocol:
+    name: dubbo
+server:
+  port: 8081

@@ -1,0 +1,56 @@
+#数据源
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.10.136:3306/car?useSSL=false
+    username: root  
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+#    type: 使用数据库那种连接池(默认tomcat连接池)
+
+#redis配置
+  redis:
+    host: 192.168.10.136
+    port: 6379
+    pool:
+      max-active: 30
+      max-idle: 25
+      min-idle: 20
+  activemq:
+    broker-url: tcp://192.168.10.136:61616/
+    #使用连接池要额外的依赖
+    pool:
+      max-connections: 10
+      enabled: true
+      
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  
+pagehelper:
+  auto-dialect: mysql
+  #分页合理化,当设置为负数时，返回第一页
+  reasonable: true 
+#swagger的依赖
+swagger:
+  base-package: com.sxt.cloud.controller
+  description: user-service的演示案例
+  email: 449196538@qq.com
+  license: Apache 2.0
+  license-url: http://www.apache.org/
+  name: padingPading 
+  terms-of-service-url:  https://github.com/Padingpading
+  title: 用户的接口
+  url: https://github.com/Padingpading
+  version: 1.0
+  
+#微信的配置
+wechat:
+  app: 
+    id: wxe533af97c1113515
+    secret: 2a4c03c4bd9aea718b77b84d542202ce
+  template:
+    url:  https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN
+    id: 5_qzxtH6fvYOrOU998hAcGltY9gta2u3WvhIrybNXA0
+  token:
+    url: https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
+  
+

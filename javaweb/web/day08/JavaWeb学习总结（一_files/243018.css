@@ -1,0 +1,51 @@
+#topics .postTitle {
+	text-align: center; line-height: 1.5; padding-left: 5px; font-size: 30px; font-weight: bold; float: left; text-shadow: 0px 1px 0px #ccc, 0px 2px 0px #c9c9c9, 0px 3px 0px #bbb, 0px 4px 0px #b9b9b9, 0px 5px 0px #aaa, 0px 6px 1px rgba(0,0,0,0.1), 0px 0px 5px rgba(0,0,0,0.1), 0px 1px 3px rgba(0,0,0,0.3), 0px 3px 5px rgba(0,0,0,0.2), 0px 5px 10px rgba(0,0,0,0.25);
+}
+#cnblogs_post_body h2 {
+	margin: 15px auto 8px 2px; padding: 6px 10px; border-radius: 5px; font-size: 18px; box-shadow: 3px 3px 2px #888; background-color: rgb(93, 180, 220);
+}
+#cnblogs_post_body h3 {
+	margin: 10px auto 4px 0px; padding: 4px; border-radius: 5px; border: 1px solid rgb(170, 118, 82); font-size: 16px; box-shadow: 2px 2px 2px #888; background-color: rgb(47, 209, 203);
+}
+#div_digg {
+	padding: 8px 8px 8px 10px; border: 1px solid rgb(217, 219, 225); right: 0px; bottom: 0px; position: fixed; background-color: rgb(255, 255, 255);
+}
+#div_digg {
+	width: 125px; text-align: center; font-size: 12px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; float: right;
+}
+#uprightsideBar {
+	top: 200px; width: auto; height: auto; text-align: left; right: 0px; font-family: Arial, Helvetica, sans-serif; font-size: 15px; font-weight: bold; position: fixed; backgroundcolor: darkgreen;
+}
+#sideBarTab {
+	background: rgb(107, 202, 248); border-width: 1px medium 1px 1px; border-style: solid none solid solid; border-color: rgb(229, 229, 229) currentColor rgb(229, 229, 229) rgb(229, 229, 229); width: 30px; text-align: center; color: rgb(255, 255, 255); font-size: 25px; float: left;
+}
+#sideBarContents {
+	background: rgb(255, 255, 255); border-width: 1px medium 1px 1px; border-style: solid none solid solid; border-color: rgb(229, 229, 229) currentColor rgb(229, 229, 229) rgb(229, 229, 229); width: 200px; overflow: auto; float: left; -ms-overflow-x: hidden; min-height: 108px; max-height: 460px;
+}
+#sideBarContents dl {
+	margin: 0px; padding: 0px;
+}
+#sideBarContents dt {
+	margin-top: 5px; margin-left: 5px;
+}
+#sideBarContents dd {
+	cursor: pointer;
+}
+dt {
+	cursor: pointer;
+}
+#sideBarContents dd:hover {
+	color: rgb(167, 153, 90);
+}
+dt:hover {
+	color: rgb(167, 153, 90);
+}
+#sideBarContents dd {
+	margin-left: 20px;
+}
+.cnblogs_code pre {
+	font-family: Courier New !important; font-size: 16px !important; white-space: pre-wrap; -ms-word-wrap: break-word;
+}
+.cnblogs_code span {
+	line-height: 1.5 !important; font-family: Courier New !important; font-size: 16px !important;
+}
